@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <title>微信矩阵</title>
+    <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/1.1.3/weui.min.css">
+	<!--<link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">
+	-->
+	<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.4/weui.min.js"></script>
+
+</head>
+<body>
+<div class="page">
+				<div class="weui-tab">
+					<div class="weui-navbar">
+						<a class="weui-navbar__item weui-bar__item--on" href="#tab1">
+							选项一
+						</a>
+						 <a class="weui-navbar__item" href="#tab2">
+							选项二
+							<script type="text/javascript">
+								weui.alert('alert');
+							</script>
+						</a>
+						<a class="weui-navbar__item" href="#tab3">
+							选项三
+						</a>
+					</div>
+					<div class="weui-tab__bd">
+					    <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+						  页面一
+						  <div class="weui-grids" id="grids1"></div>
+						</div>
+						<div id="tab2" class="weui-tab__bd-item weui-tab__bd-item--active">
+						页面二
+						</div>
+						<div id="tab3" class="weui-tab__bd-item">
+							<h1>页面san</h1>
+						</div>
+					</div>
+				</div>
+				<!--<div class="weui-tab">
+					<div class="weui-navbar">
+						<a class="weui-navbar__item weui-bar__item_on" href="#tab1">
+							标签一
+						</a>
+						<a class="weui-navbar__item" href="#tab2">
+							标签二
+						</a>
+						<a class="weui-navbar__item" href="#tab3">
+							标签三
+						</a>
+					</div>
+					<div class="weui-tab__panel">
+						<div id="tab1" class="weui_tab_bd_item weui_tab_bd_item_active">
+							内容一
+							<div class="weui-grids" id="grids1"></div>
+						</div>
+						<div id="tab2" class="weui_tab_bd_item">
+							内容二
+						</div>
+						<div id="tab3" class="weui_tab_bd_item">
+							内容三
+						</div>
+					</div>
+				</div>-->
+		
+		<!--<script type="text/javascript">
+			$(function(){
+        		$('.weui-navbar__item').on('click', function () {
+           			 $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
+
+            		//内容切换
+            		$(".weui-tab__panel .weui_tab_bd_item_active").removeClass('weui_tab_bd_item_active');
+            		var data_toggle =jQuery(this).attr("href");
+            		$(data_toggle).addClass("weui_tab_bd_item_active");
+        		});
+    		});
+		</script>-->
+		<script src="https://res.wx.qq.com/open/libs/zepto/1.1.6/zepto.js"></script>
+        <script src="https://cdn.bootcss.com/jquery-weui/0.8.2/js/jquery-weui.min.js"></script>
+	<script defer>
+		var data = [{text:"信息院，规学堂",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5MzkwNzM4MQ==&scene=124#wechat_redirect"},
+					{text:"湘雅医学院，中南大学湘雅医学院",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA4NTgyNzcwMA==&scene=124#wechat_redirect"},
+					{text:"外语院，CSU外语千言",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5NzAyNzQ0Nw==&scene=124#wechat_redirect"},
+					{text:"机电院，机电小齿轮",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA5MTQxNzE5OA==&scene=124#wechat_redirect"},
+					{text:"土木院，中南大学土木工程学院",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5MDA3ODY0MQ==&scene=124#wechat_redirect"},
+					{text:"能源院，CSU能源院",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzAwNjA4NDk2OA==&scene=124#wechat_redirect"},
+					{text:"药学院，中南大学药学院分团委",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5MDkwOTcwNQ==&scene=124#wechat_redirect"},
+					{text:"文新院，文小院",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA4NDE5MDAxOQ==&scene=124#wechat_redirect"},
+					{text:"资生院，中南资生苑",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzAxNTEwNzc3MQ==&scene=124#wechat_redirect"},
+					{text:"商学院，季录商院",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA5NjA0NTkwNQ==&scene=124#wechat_redirect"},
+					{text:"粉冶院，中南大学粉末冶金研究学院",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA3MDk2NDgwNA==&scene=124#wechat_redirect"},
+					{text:"护理院，中南大学湘雅护理学院",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA4MDAyNDA4Mw==&scene=124#wechat_redirect"},
+					{text:"公管院，中南公管一家亲",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA4NjM4NjE0OQ==&scene=124#wechat_redirect"},
+					{text:"法学院，中南大学法学院团学会",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5NDYwNDY2NQ==&scene=124#wechat_redirect"},
+					{text:"交通院，中南大学交通运输工程学院",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5MTAyOTQ3MA==&scene=124#wechat_redirect"},
+					{text:"体育教研部，CSU体育教研部",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIzMTEzODQ2MQ==&scene=124#wechat_redirect"},
+					{text:"建艺院，CSU艺点点",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA5OTE5NDYxNg==&scene=124#wechat_redirect"},
+					{text:"地信院，地信团",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5NzcxNzYyMA==&scene=124#wechat_redirect"},
+					{text:"物电院，中南大学物电之光",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIxODEwNTAyNg==&scene=124#wechat_redirect"},
+					{text:"马克思学院，梦想起航中南马院",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA4ODQxNDc1OA==&scene=124#wechat_redirect"},
+					{text:"口腔医学院，CSU湘雅口腔医学院",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzAxNzE4NjQwNw==&scene=124#wechat_redirect"},
+					{text:"冶环院，炽金梦",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5NjExNTYxMg==&scene=124#wechat_redirect"},
+					{text:"资安院，CSU资安院",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA3MTE3OTEwOQ==&scene=124#wechat_redirect"},
+					{text:"材料院，材料院团学会",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA3MTExMDgxMw==&scene=124#wechat_redirect"},
+					{text:"化工院，中南化语轩",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5MDAwNzkxNw==&scene=124#wechat_redirect"},
+					{text:"航空院，中南航空港",url:"Https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA4OTU2NTA4OA==&scene=124#wechat_redirect"},
+					{text:"软件院，中南大学软件学院",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5NzcwNjQxNQ==&scene=124#wechat_redirect"},
+					{text:"公卫院，中南大学湘雅公共卫生学院",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzAxNjA3NjQ4NQ==&scene=124#wechat_redirect"},
+					{text:"数统院，中南微漫思",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA5NTYzODkzOQ==&scene=124#wechat_redirect"},
+					{text:"生科院，CSU生命科学",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA3ODkxNjkwMg==&scene=124#wechat_redirect"},
+					{text:"基础医学院，中南大学基础医学院团学会",url:"https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzUyNTQwMDk4OA==&scene=124#wechat_redirect"}
+					];
+		
+		var htmlStr = "";
+		
+		for(var i=0; i<data.length; i++){
+			htmlStr += '<a href="'+data[i].url+'" class="weui-grid">';
+            htmlStr += '<div class="weui-grid__icon">';
+            htmlStr += '    <img src="../resource/matrix/'+(i+1)+'.jpg" alt="">';
+            htmlStr += '</div>';
+            htmlStr += '<p class="weui-grid__label">'+data[i].text+'</p>';
+			htmlStr += '</a>';
+		
+		}
+		
+		var grids = document.getElementById("grids1");
+		grids.innerHTML = htmlStr;
+		
+	</script>
+</div>
+</body>
+</html>

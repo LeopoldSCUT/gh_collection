@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <title>微信矩阵</title>
+    <link rel="stylesheet" href="../style/weui.min.css"/>
+	
+	
+	
+</head>
+<body>
+<div class="page">
+	<div class="weui-grids" id="grids"></div>
+	<script defer>
+		var schoolData = [{text:"华南理工大学图书馆",keyUrl:"MzU1ODUzNjk3Mw"},
+						{text:"华工青年志愿者指导中心",keyUrl:"MjM5ODg1MDEyMQ"},
+						{text:"华南理工大学出版社",keyUrl:"MzAwMjMzNzIwMw"},
+						{text:"华南理工大学财务处",keyUrl:"MzA3NDAyMjA0MQ"},
+						{text:"华南理工大学研究生",keyUrl:"MzA3NjA4MjIwMA"},
+						{text:"华南理工大学学生就业指导中心",keyUrl:"MjM5MTU4NjMwNQ"},
+						{text:"华南理工大学校友会",keyUrl:"MjM5NjE1NDg2MA"},
+						{text:"华工体测中心",keyUrl:"MzUxNDI5NjM4OA"},
+						{text:"华南理工大学研招办",keyUrl:"MzIwMDI0NDgyMQ"},
+						{text:"华工青年",keyUrl:"MzA4MjIxMTIwNw"},
+						{text:"华工教务",keyUrl:"MzA4MTAxMTY1NQ"},
+						{text:"华南理工大学招生办",keyUrl:"MzA5NDY2ODUzMQ"},
+						{text:"华工社区卫生服务中心",keyUrl:"MzA3MzMyMDMyOA"},
+						{text:"华工后勤微服务",keyUrl:"MzA3OTkxOTQxNw"},
+						{text:"华南理工大学人事处",keyUrl:"MzI5NTY0NjEzMQ"},
+						{text:"SCUT海外交流",keyUrl:"MzA3NjUzMTUxNg"}
+						];
+
+		var collegeData = [{text:"华南理工大学公共管理学院",keyUrl:"MzUwOTA5MDQzMw"},
+						{text:"SCUT计算机团学",keyUrl:"MzA3ODcwODY2Ng"},
+						{text:"华南理工马克思主义学院",keyUrl:"MzIzMzY1MTQzNw"},
+						{text:"华园艺苑",keyUrl:"MzAwMDMyODk3Mw"},
+						{text:"华南理工大学生物医学科学与工程学院",keyUrl:"MzU5MDU1ODk1NA"},
+						{text:"华工电子与信息学院",keyUrl:"MzAxNzA2MDcwNA"},
+						{text:"华工工管之声",keyUrl:"MjM5MjA3OTUwMg"},
+						{text:"华工国防生",keyUrl:"MzA4Mjg0Nzk2Nw"},
+						{text:"华工机汽之家",keyUrl:"MjM5NTEzMjI5MA"},
+						{text:"华工设计狮",keyUrl:"MzA4MjU2NjkwMw"}
+						];
+
+		var studentData = [{text:"华工百步梯",keyUrl:"MjM5NDA4NzM4MA"},
+						{text:"华南理工大学学生会",keyUrl:"MjM5NTA2ODQyMA"},
+						{text:"华工社团联合会",keyUrl:"MjM5Njk4MzkyMQ"}
+						];
+		
+		var htmlStr = "";
+		for(var i=0; i<schoolData.length; i++){
+			htmlStr += '<a href=https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz="'+schoolData[i].keyUrl+'"==&scene=124#wechat_redirect class="weui-grid">';
+            htmlStr += '<div class="weui-grid__icon">';
+            htmlStr += '    <img src="../img/'+schoolData[i].keyUrl+'.jpg" onerror="javascript:this.src=\'../img/scut.jpg\'" alt="">';
+            htmlStr += '</div>';
+            htmlStr += '<p class="weui-grid__label">'+schoolData[i].text+'</p>';
+			htmlStr += '</a>';
+		}
+
+		for(var i=0; i<collegeData.length; i++){
+			htmlStr += '<a href=https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz="'+collegeData[i].keyUrl+'"==&scene=124#wechat_redirect class="weui-grid">';
+            htmlStr += '<div class="weui-grid__icon">';
+            htmlStr += '    <img src="../img/'+collegeData[i].keyUrl+'.jpg" onerror="javascript:this.src=\'../img/scut.jpg\'" alt="">';
+            htmlStr += '</div>';
+            htmlStr += '<p class="weui-grid__label">'+collegeData[i].text+'</p>';
+			htmlStr += '</a>';
+		}
+
+		for(var i=0; i<studentData.length; i++){
+			htmlStr += '<a href=https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz="'+studentData[i].keyUrl+'"==&scene=124#wechat_redirect class="weui-grid">';
+            htmlStr += '<div class="weui-grid__icon">';
+            htmlStr += '    <img src="../img/'+studentData[i].keyUrl+'.jpg" onerror="javascript:this.src=\'../img/scut.jpg\'" alt="">';
+            htmlStr += '</div>';
+            htmlStr += '<p class="weui-grid__label">'+studentData[i].text+'</p>';
+			htmlStr += '</a>';
+		}
+		var grids = document.getElementById("grids");
+		grids.innerHTML = htmlStr;
+
+	</script>
+</div>
+</body>
+</html>
