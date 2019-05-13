@@ -38,10 +38,11 @@
 			}
 		});	
 
+		var path = ".."
 		function nofind(){ 
-			var img=event.srcElement; 
-			//img.src="/_upload/tpl/06/98/1688/template1688/img/scut.jpg"; 
-			img.src="../img/scut.jpg"; 
+			var img = event.srcElement; 
+			//img.src = "/_upload/tpl/06/98/1688/template1688/img/scut.jpg"; 
+			img.src = path + "/img/scut.jpg"; 
 		} 
 		
 		var schoolData = [{text:"图书馆",keyUrl:"MzU1ODUzNjk3Mw"},
@@ -58,8 +59,8 @@
 						{text:"后勤微服务",keyUrl:"MzA3OTkxOTQxNw"},
 						{text:"出版社",keyUrl:"MzAwMjMzNzIwMw"},
 						{text:"财务处",keyUrl:"MzA3NDAyMjA0MQ"},
-						{text:"校友会",keyUrl:"MjM5NjE1NDg2MA"},
 						{text:"人事处",keyUrl:"MzI5NTY0NjEzMQ"},
+						{text:"校友会",keyUrl:"MjM5NjE1NDg2MA"}
 						];
 
 		var collegeData = [{text:"华工国防生",keyUrl:"MzA4Mjg0Nzk2Nw"},
@@ -83,15 +84,15 @@
 						];
 
 		var studentData = [{text:"华工百步梯",keyUrl:"MjM5NDA4NzM4MA"},
-						{text:"学生会",keyUrl:"MjM5NTA2ODQyMA"},
-						{text:"华工社团联合会",keyUrl:"MjM5Njk4MzkyMQ"}
+						{text:"华工学生会",keyUrl:"MjM5NTA2ODQyMA"},
+						{text:"社团联合会",keyUrl:"MjM5Njk4MzkyMQ"}
 						];
 		
 		var htmlStr1 = "";
 		for(var i=0; i<schoolData.length; i++){
 			htmlStr1 += '<a href="https://mp.weixin.qq.com/mp/getmasssendmsg?__biz='+schoolData[i].keyUrl+'==#wechat_redirect" class="weui-grid">';
             htmlStr1 += '<div class="weui-grid__icon">';
-            htmlStr1 += '    <img src="../img/'+schoolData[i].keyUrl+'.jpg" onerror="nofind();" alt="">';
+            htmlStr1 += '    <img src="'+path+'/img/'+schoolData[i].keyUrl+'.jpg" onerror="nofind();" alt="">';
             htmlStr1 += '</div>';
             htmlStr1 += '<p class="weui-grid__label">'+schoolData[i].text+'</p>';
 			htmlStr1 += '</a>';
@@ -103,7 +104,7 @@
 		for(var i=0; i<collegeData.length; i++){
 			htmlStr2 += '<a href="https://mp.weixin.qq.com/mp/getmasssendmsg?__biz='+collegeData[i].keyUrl+'==#wechat_redirect" class="weui-grid">';
             htmlStr2 += '<div class="weui-grid__icon">';
-            htmlStr2 += '    <img src="../img/'+collegeData[i].keyUrl+'.jpg" onerror="nofind();" alt="">';
+            htmlStr2 += '    <img src="'+path+'/img/'+collegeData[i].keyUrl+'.jpg" onerror="nofind();" alt="">';
             htmlStr2 += '</div>';
             htmlStr2 += '<p class="weui-grid__label">'+collegeData[i].text+'</p>';
 			htmlStr2 += '</a>';
@@ -115,7 +116,7 @@
 		for(var i=0; i<studentData.length; i++){
 			htmlStr3 += '<a href="https://mp.weixin.qq.com/mp/getmasssendmsg?__biz='+studentData[i].keyUrl+'==#wechat_redirect" class="weui-grid">';
             htmlStr3 += '<div class="weui-grid__icon">';
-            htmlStr3 += '    <img src="../img/'+studentData[i].keyUrl+'.jpg" onerror="nofind();" alt="">';
+            htmlStr3 += '    <img src="'+path+'/img/'+studentData[i].keyUrl+'.jpg" onerror="nofind();" alt="">';
             htmlStr3 += '</div>';
             htmlStr3 += '<p class="weui-grid__label">'+studentData[i].text+'</p>';
 			htmlStr3 += '</a>';
